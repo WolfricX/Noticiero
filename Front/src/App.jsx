@@ -4,11 +4,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './pages/Login';
 import AddUser from './pages/Register';
 import Home from './pages/Home';
-import Clima from './pages/Clima';
 import Motivacional from './pages/Motivacional';
 import Trafico from './pages/Trafico';
 import Nosotros from './pages/Nosotros';
 import Contactanos from './pages/Contactanos';
+import CondicionesAtmosfericas from './pages/apigobu';
 //import LoginForm from './pages/LoginForm';
 
 
@@ -32,10 +32,6 @@ function App() {
       element:<Home/>
     },
     {
-      path :"/Clima",
-      element:<Clima/>
-    },
-    {
       path :"/Motivacional",
       element:<Motivacional/>
     },
@@ -50,6 +46,10 @@ function App() {
     {
       path :"/Contactanos",
       element:<Contactanos/>
+    },
+    {
+      path :"/Clima",
+      element:<CondicionesAtmosfericas/>
     },
 
   
