@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, TrafficLayer } from '@react-google-maps/api';
 
 const mapContainerStyle = {
   height: "400px",
-  width: "1250px",
+  width: "1280px",
 };
 
 const center = {

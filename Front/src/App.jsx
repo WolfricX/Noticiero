@@ -9,6 +9,7 @@ import Trafico from './pages/Trafico';
 import Nosotros from './pages/Nosotros';
 import Contactanos from './pages/Contactanos';
 import CondicionesAtmosfericas from './pages/apigobu';
+import Valores from './pages/Valores';
 //import LoginForm from './pages/LoginForm';
 
 
@@ -51,7 +52,10 @@ function App() {
       path :"/Clima",
       element:<CondicionesAtmosfericas/>
     },
-
+    {
+      path :"/Bolsa",
+      element:<Valores/>
+    },
   
   
     ])

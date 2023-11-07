@@ -10,6 +10,7 @@ function Navbar() {
           <a href="/Motivacional" className="text-red font-bold text-xl mx-10">Motivacional</a>
           <a href="/Trafico" className="text-red font-bold text-xl mx-10">Tráfico</a>
           <a href="/Nosotros" className="text-red font-bold text-xl mx-10">Nosotros</a>
+          <a href="/Bolsa" className="text-red font-bold text-xl mx-10">Finanzas</a>
           <a href="/Contactanos" className="text-red font-bold text-xl mx-10">Contáctanos</a>
         </div>
       </div>
