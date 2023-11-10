@@ -1,0 +1,3 @@
+en la carpeta de back meter el back que tienes
+
+y la de front del proyecto arrastralo a la carpeta de noticiero
