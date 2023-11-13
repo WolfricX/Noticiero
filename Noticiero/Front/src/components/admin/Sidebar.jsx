@@ -7,7 +7,11 @@ function Sidebar() {
                     <h1 className="italic text-white text-2xl font-semibold">DASHBOARD</h1>
                         <a className="hover:text-blue-400" href="/">Usuarios</a>
                         <br/>
+                        <a className="hover:text-blue-400" href="/Noticias">Noticias</a>
+                        <br/>
                         <a className="hover:text-blue-400" href="/Register">Add User</a>
+                        <br/>
+                        <a className="hover:text-blue-400" href="/Agregarn">Add Noticia</a>
                         <br/>
                         <a className="hover:text-blue-400" href="/Login">Cerrar sesion</a>
                     </ul>

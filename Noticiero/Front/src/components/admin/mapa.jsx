@@ -3,8 +3,8 @@ import React from 'react';
 import { GoogleMap, LoadScript, TrafficLayer } from '@react-google-maps/api';
 
 const mapContainerStyle = {
-  height: "400px",
-  width: "1250px",
+  height: 600,
+  width: "100%",
 };
 
 const center = {
