@@ -1,6 +1,6 @@
-// App.jsx
+// En App.jsx
 import React from 'react';
-import MapWithTraffic from './MapWithTraffic'; // Asegúrate de que la ruta sea correcta
+import MapWithTraffic from './mapa';
 
 function map() {
   return (
@@ -12,3 +12,4 @@ function map() {
 }
 
 export default map;
+

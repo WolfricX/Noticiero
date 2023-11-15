@@ -36,6 +36,7 @@ class CondicionesAtmosfericas extends Component {
             <tr style={{ border: '1px solid black' }}>
               <th style={{ border: '1px solid black', padding: '8px' }}>Estado</th>
               <th style={{ border: '1px solid black', padding: '8px' }}>Ciudad</th>
+              <th style={{ border: '1px solid black', padding: '8px' }}>Probabilidad de Precipitacion</th>
               <th style={{ border: '1px solid black', padding: '8px' }}>Temperatura</th>
             </tr>
           </thead>
@@ -44,6 +45,7 @@ class CondicionesAtmosfericas extends Component {
               <tr key={index} style={{ border: '1px solid black' }}>
                 <td style={{ border: '1px solid black', padding: '8px' }}>{dato.state}</td>
                 <td style={{ border: '1px solid black', padding: '8px' }}>{dato.name}</td>
+                <td style={{ border: '1px solid black', padding: '8px' }}>{dato.probabilityofprecip} %</td>
                 <td style={{ border: '1px solid black', padding: '8px' }}>{dato.tempc} grados</td>
               </tr>
             ))}

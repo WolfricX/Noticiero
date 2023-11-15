@@ -1,47 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/admin/Nabvar';
 import Header from '../components/admin/Header';
+import Navbar from "../components/admin/Nabvar";
 
 function Motivacional() {
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
+  const [quote, setQuote] = useState({ content: '', author: '' });
 
   useEffect(() => {
-    fetch("http://api.quotable.io/random")
-      .then(res => res.json())
-      .then((data) => {
-        setQuote(data.content);
-        setAuthor(data.author);
-      });
+    fetch('https://api.quotable.io/random')
+      .then(response => response.json())
+      .then(data => {
+        setQuote({ content: data.content, author: data.author });
+      })
+      .catch(error => console.error('Error al obtener la cita:', error));
   }, []);
-
-  let fetchNewQuote = () => {
-    fetch("http://api.quotable.io/random")
-      .then(res => res.json())
-      .then((data) => {
-        setQuote(data.content);
-        setAuthor(data.author);
-      });
-  };
 
   return (
     <div>
-      <Header/>
+      <Header />
       <Navbar/>
-      <br></br>
-      <br></br>
-
-      <br></br>
-
-    <div className="flex justify-center items-center rounded-10px  flex-col bg-cover bg-center" >
-      <div className="bg-transparent w-450px h-320px rounded-10px p-12 flex justify-center items-center flex-col ">
-        <h2 className="text-4xl font-lobster">{quote}</h2>
-        <small className="text-2xl font-dancingScript mt-4">-{author}-</small>
-      </div><br />
-      <button className="block border-2 border-red-600 bg-transparent px-6 py-2 text-red-600 text-lg rounded-md cursor-pointer transition duration-1000 ease-in-out hover:bg-red-600 hover:text-white focus:outline-none shadow-md hover:shadow-lg" onClick={fetchNewQuote}>Generate New Quote</button>
-    </div>
+      <div className="content flex justify-center items-center h-screen">
+        <div className="bg-red-900 text-white p-10 rounded-lg max-w-lg mx-auto text-center">
+          <blockquote>
+            <p className="mb-4">"{quote.content}"</p>
+            <footer>— {quote.author}</footer>
+          </blockquote>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Motivacional;
+
