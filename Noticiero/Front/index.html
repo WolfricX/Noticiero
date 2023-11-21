@@ -1,13 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite + React</title>
-  </head>
-  <body>
+    
+    <!-- Agrega el script del SDK de Facebook y la inicialización -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        // Inicializa el SDK de Facebook con tu ID de aplicación
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '7740383232655272',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v12.0', // Cambia a la versión de la API de Facebook que estás utilizando
+            });
+        };
+    </script>
+</head>
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
 </html>

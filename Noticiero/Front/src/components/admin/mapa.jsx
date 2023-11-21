@@ -40,19 +40,19 @@ const MapWithTraffic = () => {
       <div className="flex space-x-2 mt-4">
         <button
           onClick={toggleTrafficLayer}
-          className={`px-4 py-2 bg-red-500 text-white ${trafficLayerVisible ? 'bg-green-500' : ''}`}
+          className={`px-4 py-2 bg-red-700 text-white ${trafficLayerVisible ? 'bg-green-500' : ''}`}
         >
           {trafficLayerVisible ? 'Ocultar Capa de Tráfico' : 'Mostrar Capa de Tráfico'}
         </button>
         <button
           onClick={toggleTransitLayer}
-          className={`px-4 py-2 bg-red-500 text-white ${transitLayerVisible ? 'bg-green-500' : ''}`}
+          className={`px-4 py-2 bg-red-700 text-white ${transitLayerVisible ? 'bg-green-500' : ''}`}
         >
           {transitLayerVisible ? 'Ocultar Capa de Transporte Público' : 'Mostrar Capa de Transporte Público'}
         </button>
         <button
           onClick={toggleBicyclingLayer}
-          className={`px-4 py-2 bg-red-500 text-white ${bicyclingLayerVisible ? 'bg-green-500' : ''}`}
+          className={`px-4 py-2 bg-red-700 text-white ${bicyclingLayerVisible ? 'bg-green-500' : ''}`}
         >
           {bicyclingLayerVisible ? 'Ocultar Capa de Rutas para Bicicletas' : 'Mostrar Capa de Rutas para Bicicletas'}
         </button>
