@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="bg-white p-4">
       <div className="container mx-auto flex justify-center items-center">
         <div className="flex">
-          <a href="/Home" className="text-red-800 font-bold text-xl mx-10 transition duration-300 ease-in-out transform hover:scale-110 hover:text-red-700">Inicio</a>
+          <a href="/" className="text-red-800 font-bold text-xl mx-10 transition duration-300 ease-in-out transform hover:scale-110 hover:text-red-700">Inicio</a>
           <a href="/Clima" className="text-red-800 font-bold text-xl mx-10 transition duration-300 ease-in-out transform hover:scale-110 hover:text-red-700">Clima</a>
           <a href="/Motivacional" className="text-red-800 font-bold text-xl mx-10 transition duration-300 ease-in-out transform hover:scale-110 hover:text-red-700">Motivacional</a>
           <a href="/Trafico" className="text-red-800 font-bold text-xl mx-10 transition duration-300 ease-in-out transform hover:scale-110 hover:text-red-700">Tráfico</a>

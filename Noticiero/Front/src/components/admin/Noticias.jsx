@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import { RiLineChartLine, RiUserLine } from "react-icons/ri";
 
 function Noticias() {
   const [Noticias, setNoticias] = useState([]);
@@ -42,83 +43,102 @@ function Noticias() {
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+
+
+<div className="flex flex-col h-screen">
+        
         <div className="flex flex- h-screen">
           <Sidebar/>
-          <div className="flex-1 p-4">
-            <div className="w-full">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead>
-                  <tr>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Id
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    Noticia
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Resumen
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Contenido
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                      Imagen
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Delete</th>
-                  </tr>
-                </thead>
+        <div className="flex-1 p-4 ">
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-10 gap-8">
+          {/* Card 1 */}
+          <div className="bg-red-700 p-8 rounded-xl text-gray-300 flex flex-col gap-6">
+            <RiUserLine className="text-5xl" />
+            <h4 className="text-2xl">Total de Noticias:</h4>
+            <span  className="text-5xl text-white"></span>
+            
+            <a href="./Agregarn" className="text-5 text-center bg-red-600 p-2 rounded text-white">Agregar Noticia</a>
+          </div>
+          </section>
+          <br></br>
+
+
+          
+          <div className="w-full bg-white p-8 rounded-xl shadow-2xl mb-8 flex flex-col gap-8">
+  <table className="min-w-full divide-y divide-gray-200">
+    <thead className="bg-gray-100">
+      <tr>
+        <th className="w-1/5 px-9 py-4 text-left font-bold text-gray-700">ID</th>
+        <th className="w-1/5 px-9 py-4 text-left font-bold text-gray-700">Noticia</th>
+        <th className="w-1/5 px-6 py-4 text-left font-bold text-gray-700">Resumen</th>
+        <th className="w-1/5 px-9 py-4 text-left font-bold text-gray-700">Imagen</th>
+        <th className="w-1/5 px-9 py-4 text-left font-bold text-gray-700">Eliminar</th>
+        <th className="w-1/5 px-9 py-4 text-left font-bold text-gray-700">Actualizar</th>
+      </tr>
+    </thead>
+    <tbody className="bg-white divide-y divide-gray-200">
+      {Noticias.map((noticia) => (
+        <tr key={noticia.id}>
+          <td className="px-6 py-4 text-gray-800">{noticia.id}</td>
+          <td className="px-5 py-4">
+            {editing && editedNoticia.id === noticia.id ? (
+              <input
+                type="text"
+                value={editedNoticia.titulo}
+                onChange={(e) =>
+                  setEditedNoticia({ ...editedNoticia, titulo: e.target.value })
+                }
+                className="w-full px-2 py-1 border rounded-md"
+              />
+            ) : (
+              noticia.titulo
+            )}
+          </td>
+          <td className="px-6 py-4 text-gray-800">{noticia.resumen}</td>
+          <td className="px-6 py-4">
+            <img
+              className="w-32 h-32 object-contain rounded"
+              src={noticia.imagen}
+              alt={noticia.titulo}
+            />
+          </td>
+          <td className="px-6 py-4">
+            <button
+              onClick={() => handleDelete(noticia.id)}
+              className="px-4 py-2 text-white bg-red-700 rounded hover:bg-red-700"
+            >
+              Eliminar
+            </button>
+          </td>
+          <td className="px-6 py-4">
+            <button
+              className="px-4 py-2 text-white bg-blue-700 rounded hover:bg-blue-700"
+            >
+              Actualizar
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
 
 
-                <tbody className="bg-white  divide-gray-200">
-                  {Noticias.map((noticias) => (
-                    <tr key={noticias.id}>
-                      <th key={noticias.titulo}>{noticias.id}</th>
 
-                      <td className="px-5 py-4  text-sm leading-5 font-medium text-gray-900">
-                        {editing && editedNoticia.id === noticias.id ? (
-                         
-                         
-                         <input
-                            type="text"
-                            value={editedNoticia.titulo}
-                            onChange={(e) =>
-                              setEditedNoticia({ ...editedNoticia, titulo: e.target.value })
-                            }
-                          />
-                        ) : (
-                          noticias.titulo
-                        )}
-                      </td>
-
-                      
-                      
-                      
-                      <th key={noticias.contenido}>{noticias.contenido}</th>
-                      <th key={noticias.resumen}>{noticias.resumen}</th>
-                      <img className='w-32 h-32 object-contain rounded' src={noticias.imagen}key={noticias.imagen}/>
-
-
-                      <td className="px-5 py-4 text-sm leading-5 font-medium">
-                       
-                       
-                       
-                        <button
-                          onClick={() => handleDelete(noticias.id)}
-                          className="text-red-600 hover:text-red-900"
-                        >
-                          Eliminar
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
           </div>
         </div>
       </div>
+
+
+
+
+
+                       
+                       
+                       
+ 
+
     </>
   );
 }

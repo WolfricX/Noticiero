@@ -1,4 +1,5 @@
 import React from 'react';
+import NoticiaDetalle from './pages/NoticiaDetalle'; // Asegúrate de ajustar la ruta de importación
 import CombinedComponent from './components/admin/UsuariosDashboard';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './pages/Login';
@@ -20,7 +21,7 @@ function App() {
   
     {
       path :"/",
-      element:<CombinedComponent/>
+      element:<Home/>
     },
     {
       path :"/Login",
@@ -36,8 +37,8 @@ function App() {
       element:<AddNoticia/>
     },
     {
-      path :"/Home",
-      element:<Home/>
+      path :"/Dashboard",
+      element:<CombinedComponent/>
     },
 
     {
@@ -63,6 +64,11 @@ function App() {
     {
       path :"/Clima",
       element:<CondicionesAtmosfericas/>
+    },
+
+    {
+      path: "/noticias/:id",
+      element: <NoticiaDetalle />
     },
     {
       path :"/Bolsa",
