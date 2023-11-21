@@ -16,6 +16,10 @@ export class UsersService {
         @InjectRepository(Profile) private profileRepository: Repository<Profile>
         ) {}
 
+        async countUsers(): Promise<number> {
+            return await this.userRepository.count();
+        }
+
     async createUser (user: CreateUserDto) { 
 
         const userFound =  await this.userRepository.findOne({

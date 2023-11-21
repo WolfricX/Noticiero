@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { NoticiasModule } from './Noticias/noticias.module';
+
 import { TypeOrmModule} from '@nestjs/typeorm'
 import { AuthModule } from './auth/auth.module';
 
@@ -22,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
         //密码
     }),
     UsersModule,
+    NoticiasModule,
     AuthModule,
     ],
 

@@ -16,13 +16,15 @@ export class UsersController {
         return this.usersService.getUsers();
     }
 
+    @Get('count')
+    async countUsers(): Promise<number> {
+        return await this.usersService.countUsers();
+    }
+    
     @Get(':id')
     getUser(@Param('id', ParseIntPipe) id: number) {
-        console.log(id)
-        console.log(typeof id)
         return this.usersService.getUser(id);
     }
-
     @Post()
     createUser(@Body() newUser: CreateUserDto) {
         return this.usersService.createUser(newUser); 
