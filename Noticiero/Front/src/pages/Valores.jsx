@@ -3,7 +3,7 @@ import axios from "axios"; // Asegúrate de haber instalado axios
 import Header from '../components/admin/Header';
 import Navbar from "../components/admin/Nabvar";
 import TradingViewTickerTape from "../components/admin/Widgetvalbarra";
-import TablaCompañias from "../components/admin/widgetresumen";
+import TablaCompañias from "../components/admin/Widgetresumen";
 import Criptodivisas from "../components/admin/Criptotabla";
 import GeneralBolsa from "../components/admin/Tablavaloresgen";
 function Valores() {
