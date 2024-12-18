@@ -80,11 +80,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `createdAt`, `authStrategy`, `profileId`) VALUES
-(2, 'Rochita', 'Rochitas23', '2023-10-09 07:59:54', NULL, NULL),
-(3, 'Rochitasss', 'R', '2023-10-09 08:00:45', NULL, NULL),
+(2, 'Rocha', 'Rocha23', '2023-10-09 07:59:54', NULL, NULL),
+(3, 'Rosaldo', 'Rosaldo21', '2023-10-09 08:00:45', NULL, NULL),
 (7, 'jose', 'jose22', '2023-10-19 07:46:40', NULL, NULL),
-(9, 'RochaCauich', 'Gy', '2023-10-25 21:49:15', NULL, NULL),
-(11, 'Probando pr2', 'contras', '2023-11-10 00:47:29', NULL, NULL),
+(9, 'RochaCauich', 'Rocha', '2023-10-25 21:49:15', NULL, NULL),
+(11, 'Pruebas', 'password', '2023-11-10 00:47:29', NULL, NULL),
 (14, 'Juan Salmeron', '123456', '2023-11-17 18:42:15', NULL, NULL),
 (15, 'Daniel', 'Daniel', '2023-11-21 03:33:51', NULL, NULL);
 
